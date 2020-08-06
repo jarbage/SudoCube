@@ -1,6 +1,8 @@
 body{
      display: grid;
-     grid: auto 1fr auto;}
+     grid: auto 1fr auto/ 1fr;
+     margin: 0;
+    }
 
 #gameWindow {
     display: inline-block;
@@ -33,4 +35,12 @@ body{
 #uiSelector{
     stroke: #000;
     stroke-width: 3px;
+}
+userInterface{
+	display: fixed;
+	z-index: 999999;
+	width: 50%;
+	background-color: white;
+	bottom: 0;
+	left: 0;
 }
