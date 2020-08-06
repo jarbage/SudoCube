@@ -20,8 +20,7 @@ export default class Unit {
     /* Creates metaCube for the Unit */
     createCube() {
         let metaCube = this.cubeBuilder()
-        this.scene.add(metaCube);
-        return metaCube
+        return metaCube;
     }
 
     /* Constructs a generic cube */
@@ -30,6 +29,11 @@ export default class Unit {
         let metaGeometry = new THREE.BoxGeometry(this.cubeSize, this.cubeSize, this.cubeSize);
         let metaCube = new THREE.Mesh(metaGeometry, metaMaterial);
         return metaCube;
+    }
+
+    //Loads metacubes into the scene
+    loadScene() {
+        this.scene.add(this.metaCube);
     }
 
 

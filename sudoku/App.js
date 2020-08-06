@@ -37,6 +37,7 @@ function init() {
 	
 	// sodokuBoard = new Board(scene, solvedBoard)
 	sodokuBoard = new Cube(scene)
+	sodokuBoard.loadScene();
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 100 );
 	camera.position.set(8.5, 8.5, -20);
