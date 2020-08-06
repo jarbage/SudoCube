@@ -1,10 +1,9 @@
 import Board from './Board.js';
-import Unit from './Unit.js';
+import Cube from './Cube.js';
 
 import { OrbitControls } from 'https://unpkg.com/three@0.119.1/examples/jsm/controls/OrbitControls.js';
 
 var camera, scene, renderer;
-var mouseX = 0, mouseY = 0;
 
 var colorPalette = [0x00ff00,0x800000,0xfabebe,0xf032e6,0xf58231,0x4363d8,0x3cb44b,0xffe119,0xe6194b];
 var gameWindow = document.getElementById("gameWindow");
@@ -36,13 +35,19 @@ function init() {
     scene = new THREE.Scene();
 	scene.background = new THREE.Color(0x000000);
 	
-	sodokuBoard = new Board(scene, solvedBoard)
+	// sodokuBoard = new Board(scene, solvedBoard)
+	sodokuBoard = new Cube(scene)
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 100 );
-    camera.position.set(8.5, 8.5, -20);
+	camera.position.set(8.5, 8.5, -20);
+	
 
-    controls = new OrbitControls( camera, renderer.domElement );
-    controls.target = new THREE.Vector3(8.5, 8.5, 0)
+	controls = new OrbitControls( camera, renderer.domElement );
+	//2D Sodoku Target
+	// controls.target = new THREE.Vector3(8.5, 8.5, 0)
+	//3D Sodoku
+	controls.target = new THREE.Vector3(8.5, 8.5, 8.5)
+
     controls.update();
 
     gameWindow.appendChild(renderer.domElement);

@@ -1,6 +1,11 @@
+:root{
+    overflow:hidden;
+}
+
 body{
      display: grid;
-     grid: auto 1fr auto;}
+     grid: auto 1fr auto / auto;
+    margin: 0}
 
 #gameWindow {
     display: inline-block;

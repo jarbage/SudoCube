@@ -1,8 +1,9 @@
 export default class Unit {
     
-    constructor(value, x, y, scene) {
+    constructor(value, x, y, z, scene) {
         this.x = x;
         this.y = y;
+        this.z = z;
         this.value = value;
         this.scene = scene;
 
@@ -12,8 +13,8 @@ export default class Unit {
     }
 
     /* Returns cube index */
-    static getIndex(x, y) {
-        return (x % 9) + (y * 9)
+    static getIndex(x, y, z) {
+        return (x % 9) + (y * 9) + (z * 81)
     }
 
     /* Creates metaCube for the Unit */
