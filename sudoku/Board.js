@@ -91,7 +91,47 @@ export default class Board {
                 return false
         }
 
+        //Check all 3x3 squares for all values
+        this.checkBox(0, 2, 0, 2)
+        this.checkBox(0, 2, 3, 5)
+        this.checkBox(0, 2, 6, 8)
+        this.checkBox(3, 5, 0, 2)
+        this.checkBox(3, 5, 3, 5)
+        this.checkBox(3, 5, 6, 8)
+        this.checkBox(6, 8, 0, 2)
+        this.checkBox(6, 8, 3, 5)
+        this.checkBox(6, 8, 6, 8)
+
+        // for(let x = 0; x < 9; x++) {
+        //     //Clear numbers array for every use
+        //     numbers = new Array(9).fill(0);
+        //     for(let y = 0; y < 3; y ++) {
+        //         let index = Unit.getIndex(x, y);
+        //     }
+        // }
+
        //Return true if no mistakes are found
+        return true;
+    }
+
+    checkBox(xS, xF, yS, yF) {
+        for(let x = xS; x <= xF; x++) {
+            //Clear numbers array for every use
+            let numbers = new Array(9).fill(0);
+            for(let y = yS; y <= yF; y ++) {
+                let index = Unit.getIndex(x, y);
+                let unit = this.units[index];
+                numbers[unit.value - 1] = 1;
+            }
+        }
+        //Check that each 1-9 value is in the vector
+        let correct = numbers.every(function (val) {
+            return val > 0;
+        });
+        //If not all values are in the row
+        if(!correct) 
+            return false;
+
         return true;
     }
 }
