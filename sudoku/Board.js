@@ -22,7 +22,7 @@ export default class Board {
                 value = board[i]
             }
 
-            let unit = new Unit(value, x, y, i, this.scene);
+            let unit = new Unit(value, x, y, this.scene);
             units[i] = unit;
         }
         return units;
@@ -115,9 +115,10 @@ export default class Board {
     }
 
     checkBox(xS, xF, yS, yF) {
+        let numbers;
         for(let x = xS; x <= xF; x++) {
             //Clear numbers array for every use
-            let numbers = new Array(9).fill(0);
+            numbers = new Array(9).fill(0);
             for(let y = yS; y <= yF; y ++) {
                 let index = Unit.getIndex(x, y);
                 let unit = this.units[index];
