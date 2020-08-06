@@ -1,0 +1,36 @@
+body{
+     display: grid;
+     grid: auto 1fr auto;}
+
+#gameWindow {
+    display: inline-block;
+}
+
+.interfaceClass {
+    stroke: #fff;
+    stroke-width: 33px;
+}
+
+.cls-1{
+    fill: #869cb3;
+    stroke-miterlimit: 10;
+    
+}
+
+#selected{
+    stroke: #666;
+    stroke-width: 3px;
+    box-shadow: 5px 5px #666;
+}
+
+.cls-10 {
+    fill: none;
+    stroke: #666;
+    stroke-linejoin: round;
+    stroke-width: 3px;
+}
+
+#uiSelector{
+    stroke: #000;
+    stroke-width: 3px;
+}
