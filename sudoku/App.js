@@ -36,7 +36,7 @@ function init() {
 	scene.background = new THREE.Color(0x000000);
 	
 	// sodokuBoard = new Board(scene, solvedBoard)
-	sodokuBoard = new Cube(scene)
+	sodokuBoard = new Cube(scene, createTestValues())
 	sodokuBoard.loadScene();
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 100 );
@@ -52,6 +52,14 @@ function init() {
     controls.update();
 
     gameWindow.appendChild(renderer.domElement);
+}
+
+function createTestValues() {
+	let values = new Array();
+	for(let i = 0; i < 729; i++) {
+		values[i] = i;
+	}
+	return values;
 }
 
 
