@@ -4,7 +4,6 @@
 
 <sudoku>
     <navigation>
-
     </navigation>
 
     <gameWindow id="gameWindow">
