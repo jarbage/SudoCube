@@ -11,7 +11,7 @@ export default class Cube {
         this.units = this.createUnits(cube);
         this.setUnitsPositions(1);
         this.createTestValues();
-        this.addLayer()
+        this.addLayer();
     }
 
     //Creates all 729 units for the board
@@ -28,7 +28,7 @@ export default class Cube {
                 value = cube[i]
             }
             let color = Math.floor(Math.random() * 9);
-            let unit = new Unit(value, x, y, z, this.scene, this.colorPalette[color]);
+            let unit = new Unit(value, x, y, z, this.scene, this.colorPalette[y]);
             units[i] = unit;
         }
         return units;
@@ -41,7 +41,6 @@ export default class Cube {
         for(let i = 0; i < 729; i++){
             //Place cube
             let unit = this.units[i];
-             
             unit.metaCube.position.set(x, y, z);
             
             //Increment x first
@@ -90,12 +89,13 @@ export default class Cube {
         }
         this.createUnits(values);
     }
-
-    addLayer(){
-        for(let i in units){
-            let unit = this.units[i];
-            this.units[i].metaCube.layer.set(i);
+    
+    //Can only have 32 layers
+    addLayer() {
+        for(let i = 0; i < this.units.length; i++){
+            // this.units[i].metaCube.layers.set(i);
         }
     }
+
 
 }
