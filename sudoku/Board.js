@@ -7,7 +7,7 @@ export default class Board {
         this.units = this.createUnits(board);
         this.setUnitsPositions(1);
         if(!this.isCorrect())
-            console.log("Broken lol");
+            console.log("Board invalid");
     }
 
     //Creates all 81 units for the board

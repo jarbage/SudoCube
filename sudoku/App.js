@@ -56,6 +56,14 @@ function init() {
     gameWindow.appendChild(renderer.domElement);
 }
 
+function createTestValues() {
+	let values = new Array();
+	for(let i = 0; i < 729; i++) {
+		values[i] = i;
+	}
+	return values;
+}
+
 
 
 function animate(time) {
