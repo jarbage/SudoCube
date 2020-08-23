@@ -6,6 +6,14 @@ body{
     display: grid;
     grid: auto 1fr auto / auto;
     margin: 0}
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+sudoku{
+    grid-row: 2;
+}
 
 #gameWindow {
     display: inline-block;
