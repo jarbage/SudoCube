@@ -38,6 +38,4 @@ export default class Unit {
     loadScene() {
         this.scene.add(this.metaCube);
     }
-
-
 }

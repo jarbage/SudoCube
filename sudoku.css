@@ -1,3 +1,45 @@
+#sudoku_container{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 80px 1fr 10vh;
+    grid-template-columns: auto;
+    margin: 0;
+}
+#navigation--container{
+    display: block;
+    grid-row: 1;
+}
+#gameWindow{
+    display: block;
+    grid-row: 2;
+}
+canvas{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+#sudoku_ui--container{
+    display: block;
+    grid-row: 3;
+
+}
+.sudokuUI{
+    width: 8vw;
+    height: 8vh;
+}
+.selected{
+    stroke: #666;
+    stroke-width: 3px;
+    box-shadow: 5px 5px #666;
+}
+#uiSelector{
+    stroke: #000;
+    stroke-width: 3px;
+}
+
+
+
 :root{
     overflow:hidden;
 }
@@ -5,37 +47,12 @@
 body{
     display: grid;
     grid: auto 1fr auto / auto;
-    margin: 0}
-
-#gameWindow {
-    display: inline-block;
+    margin: 0;
 }
 
-.interfaceClass {
-    stroke: #fff;
-    stroke-width: 33px;
-}
-
-.cls-1{
-    fill: #869cb3;
-    stroke-miterlimit: 10;
-    
-}
-
-#selected{
-    stroke: #666;
-    stroke-width: 3px;
-    box-shadow: 5px 5px #666;
-}
-
-.cls-10 {
-    fill: none;
-    stroke: #666;
-    stroke-linejoin: round;
-    stroke-width: 3px;
-}
-
-#uiSelector{
-    stroke: #000;
-    stroke-width: 3px;
+div{
+    z-index: 99;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
 }
