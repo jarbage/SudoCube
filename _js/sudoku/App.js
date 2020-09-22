@@ -108,5 +108,9 @@ function checkIntersect(){
 	}
 }
 
+function selectCube(){
+	checkIntersect();
+}
+
 init();
 animate();

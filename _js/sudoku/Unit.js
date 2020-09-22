@@ -2,13 +2,14 @@
 
 export default class Unit {
     
-    constructor(value, x, y, z, scene, color) {
+    constructor(value, x, y, z, scene, color, selected) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.value = value;
         this.scene = scene;
         this.color = color;
+        this.selected = false;
 
         this.cubeSize = 1;
 
